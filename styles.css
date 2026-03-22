@@ -232,8 +232,8 @@ h4 {
 
 /* ===== Hero Section ===== */
 .hero {
-    height: 100vh;
-    min-height: 600px;
+    height: 50vh;
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -247,7 +247,7 @@ h4 {
 .hero-content {
     max-width: 800px;
     z-index: 2;
-    padding-top: 5rem;
+    padding-top: 4rem;
 }
 
 .hero-title {
