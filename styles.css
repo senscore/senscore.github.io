@@ -263,9 +263,9 @@ h4 {
 
 /* ===== Hero Section ===== */
 .hero {
-    min-height: 550px;
+    min-height: 400px;
     height: auto;
-    padding: 8rem 1rem 4rem;
+    padding: 6rem 1rem 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
