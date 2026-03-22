@@ -68,10 +68,9 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" style="color: var(--secondary);">Home</a></li>
                 <li><a href="index.html#research" style="color: var(--secondary);">Research</a></li>
-                <li><a href="index.html#members" style="color: var(--secondary);">Members</a></li>
-                <li><a href="#publications" style="color: var(--primary); font-weight: 700;">Publications</a></li>
-                <li><a href="index.html#contact" class="btn-contact"
-                        style="background: var(--primary); color: #fff;">Contact</a></li>
+                <li><a href="projects.html" style="color: var(--secondary);">Projects</a></li>
+                <li><a href="members.html" style="color: var(--secondary);">Members</a></li>
+                <li><a href="publications.html" style="color: var(--primary); font-weight: 700;">Publications</a></li>
             </ul>
         </div>
     </nav>
@@ -79,17 +78,38 @@
     <!-- Page Header -->
     <section class="section bg-light" style="padding: 4rem 0;">
         <div class="container text-center">
+
             <div class="section-header" style="margin-bottom: 2rem;">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our <span class="highlight">Publications</span> &
-                    Awards</h1>
-                <p style="color: var(--text-muted); font-size: 1.1rem;">Explore the full list of journals, conferences,
-                    and achievements from SensCore AI Lab.</p>
+                <div class="bilingual-group">
+                    <h1 class="text-en" style="font-size: 3rem; margin-bottom: 0;">Our <span
+                            class="highlight">Publications</span></h1>
+                    <h1 class="text-ko"
+                        style="font-size: 2rem; color: var(--secondary); margin-bottom: 1.5rem; font-weight: 300;">출판 및
+                        논문</h1>
+                </div>
+
+                <div class="bilingual-group">
+                    <div class="text-en" style="color: var(--text-muted); font-size: 1.1rem; font-weight: 400;">Explore
+                        the full list of journals, conferences, and achievements from SensCore AI Lab.</div>
+                    <div class="text-ko" style="color: var(--text-muted); font-size: 1.0rem;">SensCore AI 연구실의 저널, 학회 논문
+                        및 학술적 성과들을 확인할 수 있습니다.</div>
+                </div>
             </div>
-            <div style="display: flex; justify-content: center; gap: 1rem;">
-                <a href="#published" class="btn btn-primary">Published Papers</a>
+
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="#published" class="btn btn-primary">
+                    <div class="text-en" style="font-size: 1rem;">Published Papers</div>
+                    <div class="text-ko" style="font-size: 0.85rem; margin-top: 0;">출판 논문</div>
+                </a>
                 <a href="#progress" class="btn btn-secondary"
-                    style="border-color: var(--primary); color: var(--primary);">Under Review</a>
-                <a href="#awards" class="btn btn-secondary" style="border-color: #8b5cf6; color: #8b5cf6;">Awards</a>
+                    style="border-color: var(--primary); color: var(--primary);">
+                    <div class="text-en" style="font-size: 1rem;">Under Review</div>
+                    <div class="text-ko" style="font-size: 0.85rem; margin-top: 0;">심사 중</div>
+                </a>
+                <a href="#awards" class="btn btn-secondary" style="border-color: #8b5cf6; color: #8b5cf6;">
+                    <div class="text-en" style="font-size: 1rem;">Awards</div>
+                    <div class="text-ko" style="font-size: 0.85rem; margin-top: 0;">수상이력</div>
+                </a>
             </div>
         </div>
     </section>
@@ -98,7 +118,11 @@
     <section id="published" class="section">
         <div class="container">
             <div class="section-header">
-                <h2><span class="pub-status-badge bg-published">Published</span> Journal & Conference Papers</h2>
+                <div class="bilingual-group">
+                    <h2 class="text-en"><span class="pub-status-badge bg-published">Published</span> Journal &
+                        Conference Papers</h2>
+                    <h2 class="text-ko" style="font-size: 1.2rem; color: var(--text-muted);">출판 완료된 저널 및 학회 논문</h2>
+                </div>
                 <div class="divider"></div>
             </div>
 
@@ -231,7 +255,10 @@
     <section id="progress" class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h2><span class="pub-status-badge bg-progress">In Progress</span> Under Review</h2>
+                <div class="bilingual-group">
+                    <h2 class="text-en"><span class="pub-status-badge bg-progress">In Progress</span> Under Review</h2>
+                    <h2 class="text-ko" style="font-size: 1.2rem; color: var(--text-muted);">심사 진행 중인 연구</h2>
+                </div>
                 <div class="divider"></div>
             </div>
 
@@ -271,7 +298,11 @@
     <section id="awards" class="section">
         <div class="container">
             <div class="section-header">
-                <h2><span class="pub-status-badge bg-award"><i class="fas fa-trophy"></i></span> Awards & Prizes</h2>
+                <div class="bilingual-group">
+                    <h2 class="text-en"><span class="pub-status-badge bg-award"><i class="fas fa-trophy"></i></span>
+                        Awards & Prizes</h2>
+                    <h2 class="text-ko" style="font-size: 1.2rem; color: var(--text-muted);">주요 수상 내역</h2>
+                </div>
                 <div class="divider"></div>
             </div>
 
@@ -319,19 +350,31 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h2>SensCore AI<span>.</span></h2>
-                    <p>SensCore AI Lab focuses on Sensing Core values and applying AI for better Life.</p>
+                    <div class="bilingual-group">
+                        <p class="text-en" style="color: #ccc; font-weight: 400;">SensCore AI Lab focuses on Sensing
+                            Core values and applying AI for better Life.</p>
+                        <p class="text-ko" style="color: #999;">SensCore AI Lab은 핵심 가치를 감지하고 더 나은 삶을 위해 인공지능을 연구합니다.</p>
+                    </div>
                 </div>
                 <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> (02450) 서울특별시 동대문구 이문로 107<br> 한국외국어대학교 Social Science & AI
-                        융합학부</p>
+                    <div class="bilingual-group" style="margin-bottom: 1.5rem;">
+                        <h3 class="text-en" style="margin-bottom: 0;">Contact Us</h3>
+                        <h3 class="text-ko" style="font-size: 1rem; color: #aaa;">오시는 길 / 연락처</h3>
+                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i>
+                        <span class="text-en" style="display:block; margin-bottom: 0.5rem; color: #ccc;">Imun-ro 107,
+                            Dongdaemun-gu, Seoul, Republic of Korea<br>HUFS, Division of Social Science & AI</span>
+                        <span class="text-ko" style="display:block; color: #999;">(02450) 서울특별시 동대문구 이문로 107<br>
+                            한국외국어대학교 Social Science & AI 융합학부</span>
+                    </p>
                 </div>
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#research">Research</a></li>
-                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="publications.html">Publications</a></li>
                     </ul>
                 </div>
             </div>
