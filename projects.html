@@ -77,6 +77,64 @@
             padding: 4rem 0;
             grid-column: 1 / -1;
         }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 650px;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        .project-card {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -92,7 +150,7 @@
                 <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="members.html">Members</a></li>
                 <li><a href="publications.html">Publications</a></li>
-                <li><a href="index.html#news">News</a></li>
+                <li><a href="news.html">News</a></li>
                 <li><a href="#contact" class="btn-contact">Contact</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -177,6 +235,16 @@
         </div>
     </footer>
 
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modal-body">
+                <!-- Data will be injected here -->
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript to Fetch and Render CSV -->
     <script>
         function parseCSV(text) {
@@ -240,14 +308,15 @@
                         const tags = tagsString.split(',').map(t => t.trim()).filter(t => t !== "");
                         const tagsHtml = tags.map(tag => `<span class="tag">${tag}</span>`).join('');
 
-                        const metaHtml = `<div class="bilingual-group" style="margin-bottom:0.2rem;"><span class="text-en"><strong>Period:</strong> ${period} | <strong>Client:</strong> ${client}</span></div>`;
+                        const metaHtml = `<div class="bilingual-group" style="margin-bottom:0.2rem;"><span class="text-en"><strong>Period:</strong> ${period} <br> <strong>Client:</strong> ${client}</span></div>`;
 
                         const slideHtml = `
-                            <div class="project-card fade-in visible">
+                            <div class="project-card fade-in visible" onclick="openModal('${encodeURIComponent(title)}', '${encodeURIComponent(client)}', '${encodeURIComponent(period)}', '${encodeURIComponent(status)}', '${encodeURIComponent(description)}', '${encodeURIComponent(tagsHtml)}')">
                                 <h3 class="project-title" style="margin-bottom: 1rem;">${title}</h3>
                                 <div class="project-meta">${metaHtml}<span style="color: ${status.includes('완료') ? '#10b981' : '#f59e0b'}; font-weight: 600; display:block; margin-top:0.5rem;">${status}</span></div>
-                                <div class="project-desc">${description}</div>
-                                <div class="project-tags">${tagsHtml}</div>
+                                <div class="project-desc" style="display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;">${description}</div>
+                                <div class="project-tags" style="margin-bottom: 1rem;">${tagsHtml}</div>
+                                <div style="color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-top: auto;">자세히 보기 &rarr;</div>
                             </div>
                         `;
                         container.insertAdjacentHTML('beforeend', slideHtml);
@@ -257,6 +326,48 @@
                     console.error(error);
                     container.innerHTML = `<div style="text-align:center; color:red; grid-column: 1 / -1;">데이터(CSV)를 불러오는 중 문제가 발생했습니다. 관리자에게 문의하세요.</div>`;
                 });
+        });
+
+        // Modal Logic
+        function openModal(title, client, period, status, desc, tags) {
+            const modal = document.getElementById('projectModal');
+            const body = document.getElementById('modal-body');
+
+            const decodedTitle = decodeURIComponent(title);
+            const decodedStatus = decodeURIComponent(status);
+            const statusColor = decodedStatus.includes('완료') ? '#10b981' : '#f59e0b';
+
+            body.innerHTML = `
+                <div class="bilingual-group" style="margin-bottom: 1.5rem; padding-right: 2rem;">
+                    <h2 class="text-en" style="font-size: 1.8rem; color: var(--secondary); margin-bottom: 0.5rem;">${decodedTitle}</h2>
+                    <span style="display:inline-block; padding: 0.3rem 0.8rem; border-radius: 20px; background: ${statusColor}20; color: ${statusColor}; font-weight: 600; font-size: 0.85rem;">${decodedStatus}</span>
+                </div>
+                
+                <div style="background: var(--bg-light); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                    <p style="margin-bottom: 0.5rem;"><strong>기간 (Period):</strong> ${decodeURIComponent(period)}</p>
+                    <p style="margin-bottom: 0;"><strong>소속/기관 (Client):</strong> ${decodeURIComponent(client)}</p>
+                </div>
+                
+                <div class="bilingual-group" style="margin-bottom: 2rem;">
+                    <div class="text-ko" style="font-size: 1.05rem; color: var(--text-main); line-height: 1.8;">${decodeURIComponent(desc)}</div>
+                </div>
+                
+                <div class="project-tags">
+                    ${decodeURIComponent(tags)}
+                </div>
+            `;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close on background click
+        document.getElementById('projectModal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
         });
     </script>
 </body>
