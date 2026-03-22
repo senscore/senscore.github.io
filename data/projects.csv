@@ -1,0 +1,5 @@
+﻿id,title,client,period,status,description,tags
+proj-1,건설 AI 실시간 상황 인식 프로젝트,건설 현장 파트너,2024. 01 - 진행중,진행중 (In Progress),건설 현장의 영상 데이터와 다중 센서를 활용하여 작업자의 안전 상황을 실시간으로 분석하고 위험 개체를 분류하는 Vision-Language AI 솔루션 개발.,"Computer Vision,Safety Edge AI,VLM"
+proj-2,고고에프앤디 스마트 물류 데이터 분석,고고에프앤디,2023. 11 - 2024. 05,진행중 (In Progress),물류 및 유통 환경에서 발생하는 시계열 데이터를 분석하여 수요 예측 및 최적 라우팅 알고리즘 개발을 지원하는 데이터 사이언스 연구.,"Data Science,Logistics,Time-series"
+proj-3,국립암센터 의료 영상 비전 언어 분석,국립암센터,2024. 03 - 진행중,진행중 (In Progress),"다양한 의료 도메인(CT, MRI 등) 영상을 기반으로 텍스트 판독문과 영상을 함께 멀티모달 프롬프팅으로 학습하는 최첨단 AI 파운데이션 모델 구축.","Medical AI,Biomedical Engineering,Multi-modal System"
+proj-4,Vaxport 프로젝트 2차,Vaxport,2023. 05 - 2023. 12,완료 (Completed),"음성 데이터를 처리하여 화자의 감정 및 맥락을 분석하고, 시청각 자극을 결합하는 HCI(인간-컴퓨터 상호작용) 기반 지능형 시스템 구축 완료.","HCI,Sound Quality Enhancement,STT-TTS"

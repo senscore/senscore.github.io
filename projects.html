@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - SensCore AI Lab</title>
+    <meta name="description" content="Research and Industry Projects from SensCore AI Lab.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+        }
+
+        .project-desc {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* 로딩 스피너 애니메이션 */
+        .loading {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            padding: 4rem 0;
+            grid-column: 1 / -1;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar"
+        style="background: rgba(255, 255, 255, 0.95); position: sticky; top: 0; border-bottom: 1px solid #eee;">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="color: var(--secondary);">SensCore AI<span>.</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" style="color: var(--secondary);">Home</a></li>
+                <li><a href="index.html#research" style="color: var(--secondary);">Research</a></li>
+                <li><a href="projects.html" style="color: var(--primary); font-weight: 700;">Projects</a></li>
+                <li><a href="members.html" style="color: var(--secondary);">Members</a></li>
+                <li><a href="publications.html" style="color: var(--secondary);">Publications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section bg-light" style="padding: 4rem 0;">
+        <div class="container text-center">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Research <span class="highlight">Projects</span></h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">
+                    Our ongoing and completed projects bridging Physical AI, Multi-modal Systems, and Industry
+                    Applications.<br>
+                    <strong>(이 페이지의 카드는 data/projects.csv 파일에서 자동으로 불러와 생성됩니다)</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Container -->
+    <section class="section">
+        <div class="container">
+            <!-- 프로젝트 리스트가 자바스크립트에 의해 여기에 동적으로 삽입됩니다. -->
+            <div id="projects-container" class="project-grid">
+                <div class="loading"><i class="fas fa-spinner fa-spin"></i> MS Excel(CSV) 데이터 로딩 중...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0; padding-top: 2rem;">
+                <p>&copy; 2026 SensCore AI Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript to Fetch and Render CSV -->
+    <script>
+        // 간단한 CSV 파서 ("," 와 줄바꿈, 엑셀의 이중 따옴표(Text 구분)를 모두 정상 인식함)
+        function parseCSV(text) {
+            const rows = [];
+            let currentRow = [];
+            let currentCell = '';
+            let insideQuotes = false;
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                if (char === '"' && text[i + 1] === '"') {
+                    // 이스케이프된 따옴표
+                    currentCell += '"';
+                    i++;
+                } else if (char === '"') {
+                    insideQuotes = !insideQuotes;
+                } else if (char === ',' && !insideQuotes) {
+                    currentRow.push(currentCell.trim());
+                    currentCell = '';
+                } else if ((char === '\n' || char === '\r') && !insideQuotes) {
+                    if (char === '\r' && text[i + 1] === '\n') continue; // \r\n 묶음 처리
+                    if (currentCell !== '' || currentRow.length > 0) {
+                        currentRow.push(currentCell.trim());
+                        rows.push(currentRow);
+                        currentRow = [];
+                        currentCell = '';
+                    }
+                } else {
+                    currentCell += char;
+                }
+            }
+            if (currentCell || currentRow.length > 0) {
+                currentRow.push(currentCell.trim());
+                rows.push(currentRow);
+            }
+            return rows;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.getElementById("projects-container");
+
+            // utf-8-sig로 저장된 CSV 파일을 불러옵니다. 브라우저가 BOM을 자동 처리하여 한글이 안 깨집니다.
+            fetch("data/projects.csv")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("CSV 파일을 찾을 수 없습니다.");
+                    }
+                    return response.text();
+                })
+                .then(csvText => {
+                    container.innerHTML = ""; // 로딩 메세지 제거
+
+                    const dataRows = parseCSV(csvText);
+
+                    // 첫 번째 줄은 헤더(id, title, client 등)이므로 제외하고 반복
+                    for (let i = 1; i < dataRows.length; i++) {
+                        const row = dataRows[i];
+                        if (row.length < 6) continue; // 빈 줄 무시
+
+                        const id = row[0];
+                        const title = row[1];
+                        const client = row[2];
+                        const period = row[3];
+                        const status = row[4];
+                        const description = row[5];
+                        const tagsString = row[6] || "";
+
+                        // 태그 분리 (콤마)
+                        const tags = tagsString.split(',').map(t => t.trim()).filter(t => t !== "");
+                        const tagsHtml = tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+                        const metaHtml = `<strong>기간:</strong> ${period} &nbsp;|&nbsp; <strong>소속/기관:</strong> ${client}`;
+
+                        const slideHtml = `
+                            <div class="project-card fade-in visible">
+                                <h3 class="project-title">${title}</h3>
+                                <div class="project-meta">${metaHtml}<br><span style="color: ${status.includes('완료') ? '#10b981' : '#f59e0b'}; font-weight: 600;">${status}</span></div>
+                                <div class="project-desc">${description}</div>
+                                <div class="project-tags">${tagsHtml}</div>
+                            </div>
+                        `;
+
+                        container.insertAdjacentHTML('beforeend', slideHtml);
+                    }
+                })
+                .catch(error => {
+                    console.error("데이터 로딩 실패:", error);
+                    container.innerHTML = `<div style="text-align:center; color:red; grid-column: 1 / -1;">데이터(CSV)를 불러오는 중 문제가 발생했습니다. 관리자에게 문의하세요.</div>`;
+                });
+        });
+    </script>
+</body>
+
+</html>
