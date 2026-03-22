@@ -5,10 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - SensCore AI Lab</title>
-    <meta name="description" content="Publications and Journals from SensCore AI Lab.">
+    <meta name="description" content="Publications, Journals, and Awards from SensCore AI Lab.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .pub-status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.8rem;
+            vertical-align: middle;
+        }
+
+        .bg-progress {
+            background-color: #f59e0b;
+            color: white;
+        }
+
+        .bg-published {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .bg-award {
+            background-color: #8b5cf6;
+            color: white;
+        }
+
+        .award-list {
+            list-style: none;
+            padding: 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .award-item {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .award-item h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+            color: var(--secondary);
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +69,7 @@
                 <li><a href="index.html" style="color: var(--secondary);">Home</a></li>
                 <li><a href="index.html#research" style="color: var(--secondary);">Research</a></li>
                 <li><a href="index.html#members" style="color: var(--secondary);">Members</a></li>
-                <li><a href="publications.html" style="color: var(--primary); font-weight: 700;">Publications</a></li>
+                <li><a href="#publications" style="color: var(--primary); font-weight: 700;">Publications</a></li>
                 <li><a href="index.html#contact" class="btn-contact"
                         style="background: var(--primary); color: #fff;">Contact</a></li>
             </ul>
@@ -30,67 +78,238 @@
 
     <!-- Page Header -->
     <section class="section bg-light" style="padding: 4rem 0;">
-        <div class="container">
+        <div class="container text-center">
             <div class="section-header" style="margin-bottom: 2rem;">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our <span class="highlight">Publications</span></h1>
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our <span class="highlight">Publications</span> &
+                    Awards</h1>
                 <p style="color: var(--text-muted); font-size: 1.1rem;">Explore the full list of journals, conferences,
-                    and patents from SensCore AI Lab.</p>
+                    and achievements from SensCore AI Lab.</p>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="#published" class="btn btn-primary">Published Papers</a>
+                <a href="#progress" class="btn btn-secondary"
+                    style="border-color: var(--primary); color: var(--primary);">Under Review</a>
+                <a href="#awards" class="btn btn-secondary" style="border-color: #8b5cf6; color: #8b5cf6;">Awards</a>
             </div>
         </div>
     </section>
 
-    <!-- Full Publications List -->
-    <section class="section">
+    <!-- Published Papers -->
+    <section id="published" class="section">
         <div class="container">
-
-            <div class="pub-year-section" style="margin-bottom: 3rem;">
-                <h3
-                    style="border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.8rem;">
-                    2024</h3>
-
-                <div class="pub-list fade-in visible">
-                    <div class="pub-item">
-                        <div class="pub-info">
-                            <h4>사운드 품질 향상을 위한 확산 확률 모델 연구</h4>
-                            <p class="pub-journal">IEEE Access, 2024</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Authors: TBA</p>
-                        </div>
-                    </div>
-                    <div class="pub-item">
-                        <div class="pub-info">
-                            <h4>웨어러블 센서 데이터를 활용한 정신 건강 예측 연구</h4>
-                            <p class="pub-journal">JMIR (Journal of Medical Internet Research), 2024</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Authors: TBA</p>
-                        </div>
-                    </div>
-                    <!-- 2024 추가 논문들이 들어갈 자리 -->
-                </div>
+            <div class="section-header">
+                <h2><span class="pub-status-badge bg-published">Published</span> Journal & Conference Papers</h2>
+                <div class="divider"></div>
             </div>
 
-            <div class="pub-year-section" style="margin-bottom: 3rem;">
-                <h3
-                    style="border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.8rem;">
-                    2023</h3>
-
-                <div class="pub-list fade-in visible">
-                    <div class="pub-item">
-                        <div class="pub-info">
-                            <h4>산업 안전 모니터링을 위한 실시간 엣지 컴퓨팅 연구</h4>
-                            <p class="pub-journal">Applied Sciences, 2023</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Authors: TBA</p>
-                        </div>
+            <div class="pub-list fade-in visible">
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Integrated Machine Learning Analysis for Investigating Injury Factors Among Korean Farmer
+                        </h4>
+                        <p class="pub-journal">Journal of The Korean Data Analysis Society (December 2025), 27(6),
+                            1881-1900</p>
                     </div>
-                    <div class="pub-item">
-                        <div class="pub-info">
-                            <h4>시각 장애인 지원 기술 연구</h4>
-                            <p class="pub-journal">HCI International, 2023</p>
-                            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Authors: TBA</p>
-                        </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Design of a Receiving Array Antenna with a Trapezoidal Configuration Using Multiple
+                            Rectifier Circuits for Wide-Angle Reception</h4>
+                        <p class="pub-journal">JOURNAL OF ELECTROMAGNETIC ENGINEERING AND SCIENCE, VOL. 25, NO. 3,
+                            271~278, MAY. 2025</p>
                     </div>
-                    <!-- 2023 추가 논문들이 들어갈 자리 -->
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Enhancing 3D Medical Vision-Language Models with Slice-wise Visual Prompt</h4>
+                        <p class="pub-journal">MICCAI 2025 CREATE</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Multi-Modal Medical Image Augmentation for Controlled Heterogeneity and Fair Outcomes</h4>
+                        <p class="pub-journal">ICML 2025 R2-FM</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>자동 평가의 다국어 챌린지: 영어와 한국어에 대한 사례 연구 (Multilingual Challenges in Automated Evaluators)</h4>
+                        <p class="pub-journal">AAAI 2025 Workshop</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>비전-언어모델에서 텍스트만을 통한 미세한 시각적 이해 향상 (Improving Fine-grained Visual Understanding in VLMs)</h4>
+                        <p class="pub-journal">AAAI 2025 Workshop</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>LLM의 문화 지식 갈등 탐색 능력 평가 (Assessing LLMs' Ability to Navigate Cultural Knowledge Conflicts)
+                        </h4>
+                        <p class="pub-journal">ACL 2024 Workshop</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>한국어의 언어적 유창성과 민족언어학적 지식 평가 활용 (K2 EVAL)</h4>
+                        <p class="pub-journal">ACL 2024 Workshop</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>GPT 기반 MICA: 한국 익명 심리건강 플랫폼 기반 심리상담 AI</h4>
+                        <p class="pub-journal">제34회 한글 및 한국어 정보처리 학술대회</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Non-Invasive Quantification of Corrosion in Cu Interconnects Using Regression Models With
+                            S-Parameters</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>AI기반 귓속 이어폰 뇌파로 졸음 추정</h4>
+                        <p class="pub-journal">Information Sciences (SCI, IF 8.23)</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>AI기반 근적외선분광기 (NIRS) HCI 시스템 : 무선 이마 뇌혈류 측정</h4>
+                        <p class="pub-journal">국내 등재 단독 저널 게재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>지능형 시스템 활용 뇌파로 졸음 연구</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>HCI 체중계 위에 올라서기만해도 심박 추정</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>다양한 대응분석을 활용한 농업인의 업무상 질병 관계 연구</h4>
+                        <p class="pub-journal">국내 등재 단독 저널 게재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>신호품질지표 기반으로 착용없이 생체신호 측정되는 인공지능 휠체어</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>AI기반 청각 자극 활용 HCI 시스템</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>SNS 자연어처리 기반 건강에 유독한 수질 문제 상황 진단 시스템</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>AI기반 농촌인의 우울에 대한 주요 요인 탐색</h4>
+                        <p class="pub-journal">SCIE 등재</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <!-- In Progress -->
+    <section id="progress" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="pub-status-badge bg-progress">In Progress</span> Under Review</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="pub-list fade-in visible">
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Culturally Grounded Real-World Evaluation of Korean Vision–Language Models</h4>
+                        <p class="pub-journal">Under Review</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Associations of Psychological Stress and Distress with Nutrient Intake and Metabolic
+                            Syndrome from the KNHANES 2021-2023</h4>
+                        <p class="pub-journal">Under Review, BMC Nutrition</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Redefining Evaluation Standards: A Unified Framework for Evaluating the Korean Capabilities
+                            of Language Model</h4>
+                        <p class="pub-journal">Under Review</p>
+                    </div>
+                </div>
+                <div class="pub-item">
+                    <div class="pub-info">
+                        <h4>Performance and Adversarial Vulnerability of Vision Language Models in Computer Tomography
+                        </h4>
+                        <p class="pub-journal">Under Review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="pub-status-badge bg-award"><i class="fas fa-trophy"></i></span> Awards & Prizes</h2>
+                <div class="divider"></div>
+            </div>
+
+            <ul class="award-list fade-in visible">
+                <li class="award-item">
+                    <h4>한국소프트웨어종합학술대회 (KSC2024) ‘장려상’</h4>
+                    <p style="color: var(--text-muted);">심리상담 챗봇의 만족도 평가 연구 (2025.02)</p>
+                </li>
+                <li class="award-item">
+                    <h4>한국컴퓨터종합학술대회 (KCC2024) '장려상' (3건)</h4>
+                    <p style="color: var(--text-muted);">음악 분류 머신러닝, 시각-언어 모델 기반 채색시스템, Chat-GPT 심리 상담 챗봇 만족도 비교
+                        (2024.07)</p>
+                </li>
+                <li class="award-item">
+                    <h4>한국소프트웨어종합학술대회 (KSC2023) '장려상'</h4>
+                    <p style="color: var(--text-muted);">수면 질 지표 머신러닝 연구 (2023.12)</p>
+                </li>
+                <li class="award-item">
+                    <h4>한국컴퓨터종합학술대회 (KCC2023) '우수상'</h4>
+                    <p style="color: var(--text-muted);">의미론적 이미지 영역 분할 파인튜닝 (2023.06)</p>
+                </li>
+                <li class="award-item">
+                    <h4>한국컴퓨터종합학술대회 (KCC2023) '장려상'</h4>
+                    <p style="color: var(--text-muted);">1D CNN 기반 졸음운전 감지 (2023.06)</p>
+                </li>
+                <li class="award-item">
+                    <h4>한국컴퓨터종합학술대회 (KCC2021) '장려상'</h4>
+                    <p style="color: var(--text-muted);">심장박동 추정 기반 졸음 검출 (2021.07)</p>
+                </li>
+                <li class="award-item">
+                    <h4>박사학위교 공과대학 학술대회 ‘우수논문상’</h4>
+                    <p style="color: var(--text-muted);">2018</p>
+                </li>
+                <li class="award-item">
+                    <h4>대한의용생체공학회 ‘우수논문상’ 및 ‘우수포스터상’ 다수 수상</h4>
+                    <p style="color: var(--text-muted);">2013-2018</p>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -112,7 +331,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="index.html#research">Research</a></li>
-                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="#publications">Publications</a></li>
                     </ul>
                 </div>
             </div>
