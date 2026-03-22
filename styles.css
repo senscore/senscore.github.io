@@ -164,6 +164,33 @@ h4 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
+.navbar-subpage {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95) !important;
+    padding: 1rem 5% !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+    border-bottom: 1px solid #eee;
+    z-index: 1000;
+}
+
+.navbar-subpage .logo {
+    color: var(--secondary) !important;
+}
+
+.navbar-subpage .nav-links a {
+    color: var(--secondary) !important;
+}
+
+.navbar-subpage .nav-links a.active {
+    color: var(--primary) !important;
+    font-weight: 700;
+}
+
+.navbar-subpage .hamburger {
+    color: var(--secondary) !important;
+}
+
 .navbar.scrolled .logo,
 .navbar.scrolled .nav-links a {
     color: var(--secondary);
