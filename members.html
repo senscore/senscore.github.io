@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members - SensCore AI Lab</title>
+    <meta name="description" content="Meet the team at SensCore AI Lab.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .profile-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid var(--bg-light);
+        }
+
+        .profile-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.2rem;
+            color: var(--secondary);
+        }
+
+        .profile-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .profile-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .profile-socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .profile-socials a {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .profile-socials a:hover {
+            color: var(--primary);
+        }
+
+        .pi-card-horizontal {
+            display: flex;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 4rem;
+        }
+
+        .pi-card-horizontal .profile-img {
+            border-radius: 0;
+            width: 300px;
+            height: auto;
+            border: none;
+            margin: 0;
+        }
+
+        .pi-info {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .pi-card-horizontal {
+                flex-direction: column;
+            }
+
+            .pi-card-horizontal .profile-img {
+                width: 100%;
+                height: 300px;
+            }
+
+            .pi-info {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar scrolled" id="navbar"
+        style="background: rgba(255, 255, 255, 0.95); position: sticky; top: 0; border-bottom: 1px solid #eee;">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="color: var(--secondary);">SensCore AI<span>.</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" style="color: var(--secondary);">Home</a></li>
+                <li><a href="index.html#research" style="color: var(--secondary);">Research</a></li>
+                <li><a href="members.html" style="color: var(--primary); font-weight: 700;">Members</a></li>
+                <li><a href="publications.html" style="color: var(--secondary);">Publications</a></li>
+                <li><a href="index.html#contact" class="btn-contact"
+                        style="background: var(--primary); color: #fff;">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="section bg-light" style="padding: 4rem 0;">
+        <div class="container text-center">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our <span class="highlight">Members</span></h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Meet the brilliant minds behind SensCore AI
+                    Lab's research and innovations.</p>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 1rem;">
+                <a href="#pi" class="btn btn-primary">Principal Investigator</a>
+                <a href="#interns" class="btn btn-secondary"
+                    style="border-color: var(--primary); color: var(--primary);">Current Members</a>
+                <a href="#alumni" class="btn btn-secondary"
+                    style="border-color: var(--text-muted); color: var(--text-muted);">Alumni</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Members Content -->
+    <section class="section">
+        <div class="container">
+
+            <!-- PI Section -->
+            <div id="pi" style="margin-bottom: 6rem;">
+                <h2 style="margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 1rem;">Principal
+                    Investigator</h2>
+
+                <div class="pi-card-horizontal fade-in visible">
+                    <img src="https://via.placeholder.com/300x400?text=PI+Photo" alt="Seunghyeok Hong"
+                        class="profile-img">
+                    <div class="pi-info">
+                        <h2>홍승혁 (Seunghyeok Hong, Ph.D.)</h2>
+                        <p class="profile-role" style="font-size: 1.1rem; margin-bottom: 1.5rem;">Director / Professor
+                        </p>
+                        <p style="color: var(--text-main); margin-bottom: 1rem;">
+                            SensCore AI Lab을 이끌고 있으며, 주 연구 분야는 Physical AI, Vision-Language Model, Sound Quality
+                            Enhancement 등 인공지능이 센싱 및 실생활 문제 해결에 어떻게 적용될 수 있는지를 깊이 있게 탐구하고 있습니다.
+                        </p>
+                        <div class="profile-socials" style="margin-top: 1.5rem;">
+                            <a href="#" title="Email"><i class="fas fa-envelope"></i></a>
+                            <a href="#" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interns Section -->
+            <div id="interns" style="margin-bottom: 6rem;">
+                <h2 style="margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 1rem;">
+                    Undergraduate Internships</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+
+                    <!-- Member 1 -->
+                    <div class="profile-card fade-in visible">
+                        <img src="https://via.placeholder.com/150?text=Photo" alt="노윤혁" class="profile-img">
+                        <div class="profile-info">
+                            <h4>노윤혁</h4>
+                            <p class="profile-role">Undergraduate Researcher</p>
+                            <p class="profile-desc">
+                                <strong>Major:</strong> Social Science & AI<br>
+                                <strong>Research:</strong> Computer Vision<br>
+                            </p>
+                            <div class="profile-socials">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-link"></i> Portfolio</a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="profile-card fade-in visible">
+                        <img src="https://via.placeholder.com/150?text=Photo" alt="우서현" class="profile-img">
+                        <div class="profile-info">
+                            <h4>우서현</h4>
+                            <p class="profile-role">Undergraduate Researcher</p>
+                            <p class="profile-desc">
+                                <strong>Major:</strong> Social Science & AI<br>
+                                <strong>Research:</strong> AI for Social Good<br>
+                            </p>
+                            <div class="profile-socials">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-link"></i> Portfolio</a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="profile-card fade-in visible">
+                        <img src="https://via.placeholder.com/150?text=Photo" alt="이성준" class="profile-img">
+                        <div class="profile-info">
+                            <h4>이성준</h4>
+                            <p class="profile-role">Undergraduate Researcher</p>
+                            <p class="profile-desc">
+                                <strong>Major:</strong> Social Science & AI<br>
+                                <strong>Research:</strong> Multi-modal AI<br>
+                            </p>
+                            <div class="profile-socials">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-link"></i> Portfolio</a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="profile-card fade-in visible">
+                        <img src="https://via.placeholder.com/150?text=Photo" alt="최선지" class="profile-img">
+                        <div class="profile-info">
+                            <h4>최선지</h4>
+                            <p class="profile-role">Undergraduate Researcher</p>
+                            <p class="profile-desc">
+                                <strong>Major:</strong> Social Science & AI<br>
+                            </p>
+                            <div class="profile-socials">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-link"></i> Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 5 -->
+                    <div class="profile-card fade-in visible">
+                        <img src="https://via.placeholder.com/150?text=Photo" alt="한가은" class="profile-img">
+                        <div class="profile-info">
+                            <h4>한가은</h4>
+                            <p class="profile-role">Undergraduate Researcher</p>
+                            <p class="profile-desc">
+                                <strong>Major:</strong> Social Science & AI<br>
+                            </p>
+                            <div class="profile-socials">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-link"></i> Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Member 6 -->
+                    <div class="profile-card fade-in visible">
+                        <img src="https://via.placeholder.com/150?text=Photo" alt="홍지윤" class="profile-img">
+                        <div class="profile-info">
+                            <h4>홍지윤</h4>
+                            <p class="profile-role">Undergraduate Researcher</p>
+                            <p class="profile-desc">
+                                <strong>Major:</strong> Social Science & AI<br>
+                            </p>
+                            <div class="profile-socials">
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-link"></i> Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alumni Section -->
+            <div id="alumni" style="margin-bottom: 2rem;">
+                <h2
+                    style="margin-bottom: 2rem; border-left: 4px solid var(--text-muted); padding-left: 1rem; color: var(--text-muted);">
+                    Alumni</h2>
+                <p style="color: var(--text-muted); font-style: italic;">SCAIL 연구실에서 우수한 연구를 함께 진행한 자랑스러운 졸업생 및 거쳐간
+                    연구원들의 기록 공간입니다.</p>
+                <!-- Alumni cards can go here -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>SensCore AI<span>.</span></h2>
+                    <p>SensCore AI Lab focuses on Sensing Core values and applying AI for better Life.</p>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> (02450) 서울특별시 동대문구 이문로 107<br> 한국외국어대학교 Social Science & AI
+                        융합학부</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="members.html">Members</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SensCore AI Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
