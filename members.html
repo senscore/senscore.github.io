@@ -10,6 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .profile-container-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
         .profile-card {
             background: #fff;
             border-radius: 12px;
@@ -17,11 +23,20 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: 2rem;
+            flex-direction: column;
+            /* Vertical layout for compactness */
+            padding: 1.5rem;
             text-align: left;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
+            /* Handled by grid gap */
+            height: 100%;
+        }
+
+        /* PI specifically remains a row for emphasis */
+        .profile-card.pi-card {
+            flex-direction: row;
+            grid-column: 1 / -1;
+            padding: 2.5rem;
         }
 
         .profile-card:hover {
@@ -30,83 +45,70 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            border-radius: 12px;
+            /* Slight rounder instead of circle to save space if needed */
             object-fit: cover;
-            margin-right: 2.5rem;
-            border: 4px solid var(--bg-light);
+            margin-bottom: 1.2rem;
+            border: 3px solid var(--bg-light);
             flex-shrink: 0;
+        }
+
+        .pi-card .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin-right: 3rem;
+            margin-bottom: 0;
         }
 
         .profile-info {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
-        /* Bilingual Text Styles */
+        /* Bilingual Text Styles - Compacted */
         .bilingual-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .text-en {
             font-weight: 600;
             color: var(--secondary);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             line-height: 1.4;
         }
 
         .text-ko {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 0.2rem;
+            font-size: 0.85rem;
+            margin-top: 0.1rem;
             line-height: 1.4;
         }
 
         /* Specific element overrides */
         .name-group .text-en {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--secondary);
-            margin-bottom: 0;
         }
 
-        .name-group .text-ko {
-            font-size: 1.1rem;
-            margin-top: 0;
-        }
-
-        .role-group .text-en {
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-
-        .role-group .text-ko {
-            color: #3b82f6;
-            font-size: 0.95rem;
-            font-weight: 400;
-        }
-
-        .desc-group .text-en {
-            font-weight: 400;
-            color: var(--text-main);
-        }
-
-        .desc-group .text-ko {
-            font-weight: 400;
-            color: var(--text-muted);
+        .pi-card .name-group .text-en {
+            font-size: 1.6rem;
         }
 
         .profile-socials {
             display: flex;
-            gap: 1.2rem;
-            margin-top: 1rem;
+            gap: 1rem;
+            margin-top: auto;
+            /* Push to bottom */
+            padding-top: 1rem;
         }
 
         .profile-socials a {
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: var(--transition);
         }
 
@@ -114,20 +116,22 @@
             color: var(--primary);
         }
 
+        @media (max-width: 900px) {
+            .profile-container-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
-            .profile-card {
+            .pi-card {
                 flex-direction: column;
                 text-align: center;
                 align-items: center;
             }
 
-            .profile-img {
+            .pi-card .profile-img {
                 margin-right: 0;
                 margin-bottom: 1.5rem;
-            }
-
-            .profile-socials {
-                justify-content: center;
             }
         }
     </style>
@@ -155,15 +159,15 @@
     </nav>
 
     <!-- Page Header -->
-    <section class="section bg-light" style="padding: 4rem 0;">
+    <section class="section bg-light" style="padding: 2.5rem 0;">
         <div class="container text-center">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Our <span class="highlight">Members</span></h1>
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+                <h1 style="font-size: 2.22rem; margin-bottom: 0.5rem;">Our <span class="highlight">Members</span></h1>
                 <div class="bilingual-group" style="margin-bottom: 1.5rem;">
-                    <div class="text-en" style="font-weight: 400; color: var(--text-muted); font-size: 1.1rem;">Meet the
+                    <div class="text-en" style="font-weight: 400; color: var(--text-muted); font-size: 1rem;">Meet the
                         brilliant minds behind SensCore AI Lab's research and innovations.</div>
-                    <div class="text-ko" style="color: var(--text-muted);">SensCore AI Lab의 연구와 혁신을 이끌어가는 연구원들을 소개합니다.
-                    </div>
+                    <div class="text-ko" style="color: var(--text-muted); font-size: 0.9rem;">SensCore AI Lab의 연구와 혁신을
+                        이끌어가는 연구원들을 소개합니다.</div>
                 </div>
             </div>
             <div style="display: flex; justify-content: center; gap: 1rem;">
@@ -187,7 +191,7 @@
                     <h2 style="margin-bottom: 0;">Principal Investigator</h2>
                     <div class="text-ko" style="font-size: 1.1rem; font-weight: 600;">지도교수</div>
                 </div>
-                <div id="pi-container" style="display: flex; flex-direction: column; gap: 0;">
+                <div id="pi-container">
                     <div style="text-align: center; color: var(--text-muted); padding: 2rem;"><i
                             class="fas fa-spinner fa-spin"></i> 데이터 로딩 중...</div>
                 </div>
@@ -200,7 +204,7 @@
                     <h2 style="margin-bottom: 0;">Graduate Researchers</h2>
                     <div class="text-ko" style="font-size: 1.1rem; font-weight: 600;">대학원 연구원</div>
                 </div>
-                <div id="master-container" style="display: flex; flex-direction: column; gap: 0;">
+                <div id="master-container" class="profile-container-grid">
                 </div>
             </div>
 
@@ -211,7 +215,7 @@
                     <h2 style="margin-bottom: 0;">Current Members</h2>
                     <div class="text-ko" style="font-size: 1.1rem; font-weight: 600;">현재 소속 연구원 (학부 연구생)</div>
                 </div>
-                <div id="intern-container" style="display: flex; flex-direction: column; gap: 0;">
+                <div id="intern-container" class="profile-container-grid">
                 </div>
             </div>
 
@@ -228,7 +232,7 @@
                     <div class="text-ko" style="font-style: italic; color: var(--text-muted);">SensCore 연구실에서 우수한 연구를 함께
                         진행한 자랑스러운 졸업생 및 거쳐간 연구원들의 기록 공간입니다.</div>
                 </div>
-                <div id="alumni-container" style="display: flex; flex-direction: column; gap: 0; margin-top: 2rem;">
+                <div id="alumni-container" class="profile-container-grid" style="margin-top: 2rem;">
                 </div>
             </div>
 
@@ -373,8 +377,8 @@
                         let photoUrl = (idx.photo >= 0 && row[idx.photo]) ? row[idx.photo] : 'https://via.placeholder.com/150?text=Photo';
 
                         const memberHtml = `
-                            <div class="profile-card fade-in visible">
-                                <img src="${photoUrl}" alt="${row[idx.nameEn] || ''}" class="profile-img" style="${type === 'pi' ? 'width: 200px; height: 200px;' : 'width: 150px; height: 150px;'}">
+                            <div class="profile-card ${type === 'pi' ? 'pi-card' : ''} fade-in visible">
+                                <img src="${photoUrl}" alt="${row[idx.nameEn] || ''}" class="profile-img">
                                 <div class="profile-info">
                                     <div class="bilingual-group name-group">
                                         <div class="text-en">${row[idx.nameEn] || ''}</div>
