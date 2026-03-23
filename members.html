@@ -139,14 +139,14 @@
         <div class="nav-container">
             <a href="index.html" class="logo">SensCore AI<span>.</span></a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#research">Research</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="members.html" class="active">Members</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="#contact" class="btn-contact">Contact</a></li>
+                <li><a href="index.html"><span>Home</span><span class="nav-ko">홈</span></a></li>
+                <li><a href="index.html#about"><span>About</span><span class="nav-ko">소개</span></a></li>
+                <li><a href="index.html#research"><span>Research</span><span class="nav-ko">연구</span></a></li>
+                <li><a href="projects.html"><span>Projects</span><span class="nav-ko">프로젝트</span></a></li>
+                <li><a href="members.html" class="active"><span>Members</span><span class="nav-ko">연구원</span></a></li>
+                <li><a href="publications.html"><span>Publications</span><span class="nav-ko">논문</span></a></li>
+                <li><a href="news.html"><span>News</span><span class="nav-ko">소식</span></a></li>
+                <li><a href="#contact" class="btn-contact"><span>Contact</span><span class="nav-ko">문의</span></a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
@@ -181,7 +181,7 @@
         <div class="container">
 
             <!-- PI Section -->
-            <div id="pi" style="margin-bottom: 6rem;">
+            <div id="pi" style="margin-bottom: 4rem;">
                 <div class="bilingual-group"
                     style="margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 1rem;">
                     <h2 style="margin-bottom: 0;">Principal Investigator</h2>
@@ -193,8 +193,19 @@
                 </div>
             </div>
 
+            <!-- Master's Section -->
+            <div id="masters" style="margin-bottom: 4rem; display: none;">
+                <div class="bilingual-group"
+                    style="margin-bottom: 2rem; border-left: 4px solid #8b5cf6; padding-left: 1rem;">
+                    <h2 style="margin-bottom: 0;">Graduate Researchers</h2>
+                    <div class="text-ko" style="font-size: 1.1rem; font-weight: 600;">대학원 연구원</div>
+                </div>
+                <div id="master-container" style="display: flex; flex-direction: column; gap: 0;">
+                </div>
+            </div>
+
             <!-- Interns Section -->
-            <div id="interns" style="margin-bottom: 6rem;">
+            <div id="interns" style="margin-bottom: 4rem;">
                 <div class="bilingual-group"
                     style="margin-bottom: 2rem; border-left: 4px solid var(--primary); padding-left: 1rem;">
                     <h2 style="margin-bottom: 0;">Current Members</h2>
@@ -335,14 +346,17 @@
                     };
 
                     const piContainer = document.getElementById('pi-container');
+                    const masterContainer = document.getElementById('master-container');
                     const internContainer = document.getElementById('intern-container');
                     const alumniContainer = document.getElementById('alumni-container');
 
                     piContainer.innerHTML = '';
+                    masterContainer.innerHTML = '';
                     internContainer.innerHTML = '';
                     alumniContainer.innerHTML = '';
 
                     let hasAlumni = false;
+                    let hasMaster = false;
 
                     for (let i = 1; i < rows.length; i++) {
                         const row = rows[i];
@@ -381,12 +395,19 @@
 
                         if (type === 'pi') {
                             piContainer.insertAdjacentHTML('beforeend', memberHtml);
+                        } else if (type === 'master') {
+                            masterContainer.insertAdjacentHTML('beforeend', memberHtml);
+                            hasMaster = true;
                         } else if (type === 'intern' || type === 'current') {
                             internContainer.insertAdjacentHTML('beforeend', memberHtml);
                         } else if (type === 'alumni') {
                             alumniContainer.insertAdjacentHTML('beforeend', memberHtml);
                             hasAlumni = true;
                         }
+                    }
+
+                    if (hasMaster) {
+                        document.getElementById('masters').style.display = 'block';
                     }
 
                     if (!hasAlumni) {
