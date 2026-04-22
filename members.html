@@ -32,11 +32,14 @@
             height: 100%;
         }
 
-        /* PI specifically remains a row for emphasis */
+        /* PI specifically remains a row for emphasis and takes full width */
         .profile-card.pi-card {
             flex-direction: row;
-            grid-column: 1 / -1;
-            padding: 2.5rem;
+            width: 100%;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary);
+            align-items: center;
         }
 
         .profile-card:hover {
@@ -56,11 +59,12 @@
         }
 
         .pi-card .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin-right: 3rem;
+            width: 220px;
+            height: 220px;
+            border-radius: 12px; /* Changed to match card radius for a modern look */
+            margin-right: 4rem;
             margin-bottom: 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
         .profile-info {
@@ -95,7 +99,20 @@
         }
 
         .pi-card .name-group .text-en {
-            font-size: 1.6rem;
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .pi-card .desc-group .text-en {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-main);
+            margin-top: 0.5rem;
+        }
+
+        .pi-card .desc-group .text-ko {
+            font-size: 1rem;
+            margin-top: 0.5rem;
         }
 
         .profile-socials {
@@ -124,14 +141,21 @@
 
         @media (max-width: 768px) {
             .pi-card {
-                flex-direction: column;
+                flex-direction: column !important;
                 text-align: center;
                 align-items: center;
+                padding: 2rem;
             }
 
             .pi-card .profile-img {
                 margin-right: 0;
                 margin-bottom: 1.5rem;
+                width: 180px;
+                height: 180px;
+            }
+
+            .pi-card .name-group .text-en {
+                font-size: 1.6rem;
             }
         }
     </style>
