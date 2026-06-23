@@ -374,6 +374,15 @@
                         scholar: headers.indexOf('scholar')
                     };
 
+                    // 사진 없는 멤버용 귀여운 캐릭터 아바타 (이름 기반 자동 배정)
+                    const AVATARS = ['notionists', 'open-peeps', 'adventurer', 'lorelei', 'big-smile', 'fun-emoji', 'bottts', 'thumbs'];
+                    function pickAvatar(name) {
+                        const s = name || 'member';
+                        let h = 0;
+                        for (let i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) >>> 0; }
+                        return 'data/pic/avatars/' + AVATARS[h % AVATARS.length] + '.png';
+                    }
+
                     const piContainer = document.getElementById('pi-container');
                     const masterContainer = document.getElementById('master-container');
                     const internContainer = document.getElementById('intern-container');
@@ -399,11 +408,12 @@
                         if (idx.github >= 0 && row[idx.github]) socialsHtml += `<a href="${row[idx.github]}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>`;
                         if (idx.scholar >= 0 && row[idx.scholar]) socialsHtml += `<a href="${row[idx.scholar]}" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>`;
 
-                        let photoUrl = (idx.photo >= 0 && row[idx.photo]) ? row[idx.photo] : 'https://via.placeholder.com/150?text=Photo';
+                        const avatarUrl = pickAvatar(row[idx.nameEn] || row[idx.nameKo] || ('member' + i));
+                        let photoUrl = (idx.photo >= 0 && row[idx.photo]) ? row[idx.photo] : avatarUrl;
 
                         const memberHtml = `
                             <div class="profile-card ${type === 'pi' ? 'pi-card' : ''} fade-in visible">
-                                <img src="${photoUrl}" alt="${row[idx.nameEn] || ''}" class="profile-img">
+                                <img src="${photoUrl}" alt="${row[idx.nameEn] || ''}" class="profile-img" onerror="this.onerror=null;this.src='${avatarUrl}'">
                                 <div class="profile-info">
                                     <div class="bilingual-group name-group">
                                         <div class="text-en">${row[idx.nameEn] || ''}</div>
@@ -426,7 +436,7 @@
                             const piHtml = `
                                 <div class="pi-banner fade-in visible">
                                     <div class="pi-img-wrapper">
-                                        <img src="${photoUrl}" alt="${row[idx.nameEn] || ''}" class="pi-banner-img">
+                                        <img src="${photoUrl}" alt="${row[idx.nameEn] || ''}" class="pi-banner-img" onerror="this.onerror=null;this.src='${avatarUrl}'">
                                     </div>
                                     <div class="pi-banner-info">
                                         <div class="bilingual-group name-group">
