@@ -1,5 +1,12 @@
-﻿id,title,client,period,status,description,tags
-proj-1,건설 AI 실시간 상황 인식 프로젝트,건설 현장 파트너,2024. 01 - 진행중,진행중 (In Progress),건설 현장의 영상 데이터와 다중 센서를 활용하여 작업자의 안전 상황을 실시간으로 분석하고 위험 개체를 분류하는 Vision-Language AI 솔루션 개발.,"Computer Vision,Safety Edge AI,VLM"
-proj-2,고고에프앤디 스마트 물류 데이터 분석,고고에프앤디,2023. 11 - 2024. 05,진행중 (In Progress),물류 및 유통 환경에서 발생하는 시계열 데이터를 분석하여 수요 예측 및 최적 라우팅 알고리즘 개발을 지원하는 데이터 사이언스 연구.,"Data Science,Logistics,Time-series"
-proj-3,국립암센터 의료 영상 비전 언어 분석,국립암센터,2024. 03 - 진행중,진행중 (In Progress),"다양한 의료 도메인(CT, MRI 등) 영상을 기반으로 텍스트 판독문과 영상을 함께 멀티모달 프롬프팅으로 학습하는 최첨단 AI 파운데이션 모델 구축.","Medical AI,Biomedical Engineering,Multi-modal System"
-proj-4,Vaxport 프로젝트 2차,Vaxport,2023. 05 - 2023. 12,완료 (Completed),"음성 데이터를 처리하여 화자의 감정 및 맥락을 분석하고, 시청각 자극을 결합하는 HCI(인간-컴퓨터 상호작용) 기반 지능형 시스템 구축 완료.","HCI,Sound Quality Enhancement,STT-TTS"
+id,title,client,period,status,description,tags
+proj-1,국소진행성 고형암 치료용 자동 결과판독 고전압 펄스절제기기 개발,중소기업기술정보진흥원 (중소기업기술혁신개발 R&D),2025. 01 - 진행중,진행중 (In Progress),"국소진행성 고형암 치료를 위해 자동 결과판독이 가능한 고전압 펄스 절제(전기천공) 기기와 아크 방지 프로브를 개발하는 R&D 과제. AI 기반 시술 결과 판독과 안전 제어 기술을 연구합니다.","Medical AI,Signal Processing,R&D"
+proj-2,IoT·비전 센서 기반 주행습관 보험(BBI) 산정 시스템 개발,서울경제진흥원 서울 R&D 지원센터 (2024 핀테크 기술사업화 지원사업),2025. 01 - 진행중,진행중 (In Progress),"이륜차(모빌리티)에 IoT 기기와 비전 센서를 부착해 운행 데이터를 클라우드 서버로 실시간 수집하고, 핀테크·인슈어테크 분야의 주행습관 기반 보험(BBI, Behavior Based Insurance)료 산정 시스템을 개발하여 보험사와 연동 구축합니다.","Computer Vision,IoT,InsurTech"
+proj-3,음향분류 딥러닝 기반 음성품질 고도화 기술 (사업화),중소기업기술정보진흥원 / 중소벤처기업부,2023. 05 - 2025. 03,완료 (Completed),"음향 분류 딥러닝을 활용해 음성 품질을 고도화하는 기술의 사업화 과제. 잡음 환경에서의 음성 향상과 음질 개선 알고리즘을 실제 제품화 수준으로 고도화하였습니다.","Sound Classification,Deep Learning,Speech Enhancement"
+proj-4,지능형 바이오메디컬 무선전력전송 연구센터,한국연구재단,2021. 10 - 2024. 02,완료 (Completed),"이식형·웨어러블 바이오메디컬 기기를 위한 지능형 무선전력전송(WPT) 연구센터 참여 과제. 무선 전력 전송 효율 향상과 지능형 제어 기술을 연구하였습니다.","Biomedical Engineering,Wireless Power,Intelligent System"
+proj-5,농업인 업무상 재해 조사 및 품질 향상 연구,농촌진흥청,2021. 04 - 2024. 12,완료 (Completed),"농업인의 업무상 재해와 질병을 조사하고 대응분석 등 데이터 분석 기법으로 주요 발생 요인을 탐색하여 조사 체계의 품질을 향상시키는 연구를 수행하였습니다.","Data Science,Healthcare,Statistics"
+proj-6,딥러닝 NLP 기반 심리 개선 최적 응답 매칭,(재)경기도경제과학진흥원 / 정보통신산업진흥원(NIPA),2022. 10 - 2022. 12,완료 (Completed),"딥러닝 자연어처리를 기반으로 심리 개선을 돕는 최적 응답 매칭 시스템을 연구하였습니다. 상담 맥락에 맞는 생성·검색형 응답 매칭 기법을 개발하였습니다.","NLP,Mental Health AI,LLM"
+proj-7,음향분류 딥러닝 기반 음성품질 고도화 기술 (예비연구),중소기업기술정보진흥원 / 중소벤처기업부,2022. 05 - 2022. 12,완료 (Completed),"음향 분류 딥러닝을 활용한 음성 품질 고도화 기술의 예비연구. 후속 사업화 과제의 기반이 되는 핵심 기술을 검증하였습니다.","Sound Classification,Deep Learning,Speech Enhancement"
+proj-8,고령층을 위한 무구속·무자각 스마트 휠체어 기술 개발,한국연구재단,2014. 10 - 2017. 09,완료 (Completed),"신호품질지표(SQI) 기반으로 착용·구속 없이 고령층의 생체신호를 측정하는 지능형 스마트 휠체어 기술을 개발하였습니다.","Biosignal,HCI,Intelligent System"
+proj-9,맥파도달시간 기반 혈압·체성분 복합측정 솔루션 개발,산업통상자원부,2016. 09 - 2017. 08,완료 (Completed),"맥파도달시간(PTT) 측정을 이용해 혈압과 체성분을 하나의 기기로 복합 측정하는 솔루션을 개발하였습니다.","Biosignal,Sensor,Healthcare"
+proj-10,비전 AI 기반 차량 유리 손상 분석 시스템,(주)에스에이시스템,산업 협력 과제 (약 3천만원 규모),완료 (Completed),"비전 AI를 활용해 차량 유리의 손상 여부와 유형을 자동으로 분석하는 시스템을 개발한 산업 협력 프로젝트(약 3천만원 규모)입니다.","Computer Vision,Damage Detection,Industry"
+proj-11,멀티모달 AI 알고리즘 API 활용 기술이전 (에듀빌),에듀빌 (기술이전),2024. 01 - 2024. 05,완료 (Completed),"멀티모달 AI 알고리즘의 API 활용 노하우를 에듀빌에 이전한 기술이전 과제입니다. 비독점 실시권(통상실시권) 기반으로 진행되었습니다.","Multi-modal System,LLM,Tech Transfer"
