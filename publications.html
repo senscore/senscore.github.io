@@ -105,14 +105,14 @@
             </div>
 
             <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="#published" class="btn btn-primary">
-                    <div class="text-en" style="font-size: 1rem;">Published Papers</div>
-                    <div class="text-ko" style="font-size: 0.85rem; margin-top: 0;">출판 논문</div>
-                </a>
-                <a href="#progress" class="btn btn-secondary"
-                    style="border-color: var(--primary); color: var(--primary);">
+                <a href="#progress" class="btn btn-primary">
                     <div class="text-en" style="font-size: 1rem;">Under Review</div>
                     <div class="text-ko" style="font-size: 0.85rem; margin-top: 0;">심사 중</div>
+                </a>
+                <a href="#published" class="btn btn-secondary"
+                    style="border-color: var(--primary); color: var(--primary);">
+                    <div class="text-en" style="font-size: 1rem;">Published Papers</div>
+                    <div class="text-ko" style="font-size: 0.85rem; margin-top: 0;">출판 논문</div>
                 </a>
                 <a href="#awards" class="btn btn-secondary" style="border-color: #8b5cf6; color: #8b5cf6;">
                     <div class="text-en" style="font-size: 1rem;">Awards</div>
@@ -122,8 +122,24 @@
         </div>
     </section>
 
+    <!-- In Progress -->
+    <section id="progress" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="bilingual-group">
+                    <h2 class="text-en"><span class="pub-status-badge bg-progress">In Progress</span> Under Review</h2>
+                    <h2 class="text-ko" style="font-size: 1.2rem; color: var(--text-muted);">심사 진행 중인 연구</h2>
+                </div>
+                <div class="divider"></div>
+            </div>
+
+            <div id="progress-container" class="pub-list fade-in visible">
+            </div>
+        </div>
+    </section>
+
     <!-- Published Papers -->
-    <section id="published" class="section">
+    <section id="published" class="section bg-light">
         <div class="container">
             <div class="section-header">
                 <div class="bilingual-group">
@@ -137,22 +153,6 @@
             <div id="published-container" class="pub-list fade-in visible">
                 <div style="text-align: center; color: var(--text-muted); padding: 2rem;"><i
                         class="fas fa-spinner fa-spin"></i> 데이터 로딩 중...</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- In Progress -->
-    <section id="progress" class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <div class="bilingual-group">
-                    <h2 class="text-en"><span class="pub-status-badge bg-progress">In Progress</span> Under Review</h2>
-                    <h2 class="text-ko" style="font-size: 1.2rem; color: var(--text-muted);">심사 진행 중인 연구</h2>
-                </div>
-                <div class="divider"></div>
-            </div>
-
-            <div id="progress-container" class="pub-list fade-in visible">
             </div>
         </div>
     </section>
